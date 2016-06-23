@@ -1,0 +1,92 @@
+<ion-view view-title="Informations">
+  <ion-content>
+    <div class="padding">
+        <a class="button button-assertive button-block" ng-click="scannerCode()">
+            Scanner le code
+        </a>
+    </div>
+    <div class="list" ng-form="myform">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numéro de téléphone</span>
+        <input type="tel" name="numTelephone" placeholder="Numéro de téléphone" 
+        ng-model="user.numTelephone" ng-maxlength="9" ng-minlength="9" ng-required="true">
+      </label>
+      <span class="assertive" ng-show="myform.numTelephone.$dirty && myform.numTelephone.$error.maxlength">
+          Merci d'entrer 9 chiffres.
+      </span>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Numéro CNI</span>
+        <input type="number" min="0" name="numCNI" placeholder="Numéro CNI" ng-model="user.numCNI"
+        ng-maxlength="10" ng-minlength="9" ng-required="true">
+      </label>
+      <span class="assertive" ng-show="myform.numCNI.$dirty && myform.numCNI.$error.maxlength">
+          Merci d'entrer au plus 10 chiffres.
+      </span>
+      <span class="assertive" ng-show="myform.numCNI.$dirty && myform.numCNI.$error.minlength">
+          Merci d'entrer au moins 9 chiffres.
+      </span>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Date de délivrance</span>
+        <input type="date" placeholder="yyyy/MM/dd" ng-required="true"
+          ng-model="user.dateDelivrance">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Date d'expiration</span>
+        <input type="date" placeholder="yyyy/MM/dd" ng-required="true"
+         ng-model="user.dateExpiration">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Lieu de délivrance</span>
+        <input type="text" placeholder="Lieu de délivrance" ng-required="true"
+        ng-model="user.lieuDelivrance">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nationnalité</span>
+        <input type="text" placeholder="Nationnalité" ng-required="true"
+        ng-model="user.nationnalite">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+            Civilité
+        </div>
+        <select ng-model="user.civilite">
+          <option selected>M</option>
+          <option>Mme</option>
+          <option>Mlle</option>
+        </select>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nom</span>
+        <input type="text" placeholder="Nom" ng-required="true" ng-model="user.nom">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Prénoms</span>
+        <input type="text" placeholder="Prénoms" ng-required="true" ng-model="user.prenoms">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Date de naissance</span>
+        <input type="date" placeholder="yyyy/MM/dd" ng-required="true"
+         ng-model="user.dateNaissance">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Lieu de naissance</span>
+        <input type="text" placeholder="Lieu de naissance" ng-required="true"
+        ng-model="user.lieuNaissance">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Ville de résidence</span>
+        <input type="text" placeholder="Ville de résidence" ng-required="true" ng-model="user.ville">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Quartier</span>
+        <input type="text" placeholder="Quartier" ng-required="true" ng-model="user.quartier">
+      </label>
+    </div>
+    <p class="padding">
+      <a ui-sref="photos" class="button button-block button-assertive" 
+      ng-click="suivant(user)" ng-disabled="!myform.$valid">
+        Suivant
+      </a>
+    </p>
+  </ion-content>
+</ion-view>

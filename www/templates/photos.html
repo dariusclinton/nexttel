@@ -1,0 +1,27 @@
+<ion-view view-title="Photos">
+  <ion-content class="padding">
+    <!-- <div>{{ user }}</div> -->
+    <h4><b>Photo 1</b></h4>
+    <div class="item block-img">
+        <img ng-src="{{ user.photo1 }}" ng-model="user.photo1">
+    </div>
+    <div class="padding text-center">	
+    	<a ui-sref="photos" class="button icon button-assertive ion-camera" ng-click="takePhoto1()"></a>
+    	<a ui-sref="photos" class="button icon button-assertive ion-trash-a"></a>
+    </div>
+
+    <h4><b>Photo 2</b></h4>
+    <div class="item block-img">
+    	<img ng-src="{{ user.photo2 }}" ng-model="user.photo2">
+    </div>
+    <div class="padding text-center">	
+    	<a ui-sref="photos" class="button icon button-assertive ion-camera" ng-click="takePhoto2()"></a>
+    	<a ui-sref="photos" class="button icon button-assertive ion-trash-a"></a>
+    </div>
+    <div>
+    	<a ui-sref="informations" class="button button-assertive button-block" ng-click="enregistrer(user)">
+    		ENREGISTRER
+    	</a>
+    </div>
+  </ion-content>
+</ion-view>
